@@ -15,10 +15,10 @@ function Login ({loginStatus,setLoginStatus,setAccountDetails,accountDetails}){
     // console.log(loginStatus)
 
     function loginButton(){
-        axios.post('https://amazon-w9ob.onrender.com/login',login)
+        axios.post('/login',login)
             console.log("clicked")
         .then((res)=>{
-            // console.log(res)
+            console.log(res)
             if(res.data.Message){
                 setLoginStatus({ ...loginStatus , Status: false , Message : res.data.Message })
             }else if(res.data.Success){
