@@ -17,7 +17,7 @@ import MyOrders from './myOrders';
 import Footer from './footer';
 import ProductDetails from './productDetails';
 function App() {
-  const [loginStatus,setLoginStatus] = useState({Status : null , Message : "" , Role : null , Name : "" })
+  const [loginStatus,setLoginStatus] = useState({Status : true , Message : "" , Role : null , Name : "" })
   const [product,setProduct]= useState([])
   const [filteredProducts,setFilteredProducts] = useState([])
   const [accountDetails,setAccountDetails] = useState()
@@ -42,7 +42,7 @@ function App() {
     <Route path='/account' element={loginStatus.Status == true ? <Account accountDetails={accountDetails} setAccountDetails={setAccountDetails}/> :<Navigate to={'/'}/>}/>
     <Route path='/orders' element={loginStatus.Status == true ? <MyOrders accountDetails={accountDetails} setAccountDetails={setAccountDetails}/> :<Navigate to={'/'}/>}/>
     <Route path='/product/:params' element={loginStatus.Status == true ? <ProductDetails loginStatus={loginStatus} /> :<Navigate to={'/'}/>}  />
-       <Route path='/admin' element={<AdminDashboard/>} />
+       
     </Routes>
     {loginStatus.Status == true ? <Footer/> :""}
     </BrowserRouter>
