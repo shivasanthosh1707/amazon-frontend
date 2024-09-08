@@ -17,7 +17,7 @@ import MyOrders from './myOrders';
 import Footer from './footer';
 import ProductDetails from './productDetails';
 function App() {
-  const [loginStatus,setLoginStatus] = useState({Status : true , Message : "" , Role : null , Name : "" })
+  const [loginStatus,setLoginStatus] = useState({Status : null , Message : "" , Role : null , Name : "" })
   const [product,setProduct]= useState([])
   const [filteredProducts,setFilteredProducts] = useState([])
   const [accountDetails,setAccountDetails] = useState()
