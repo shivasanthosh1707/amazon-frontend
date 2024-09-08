@@ -42,7 +42,7 @@ function App() {
     <Route path='/account' element={loginStatus.Status == true ? <Account accountDetails={accountDetails} setAccountDetails={setAccountDetails}/> :<Navigate to={'/'}/>}/>
     <Route path='/orders' element={loginStatus.Status == true ? <MyOrders accountDetails={accountDetails} setAccountDetails={setAccountDetails}/> :<Navigate to={'/'}/>}/>
     <Route path='/product/:params' element={loginStatus.Status == true ? <ProductDetails loginStatus={loginStatus} /> :<Navigate to={'/'}/>}  />
-   
+       <Route path='/admin' element={<AdminDashboard/>} />
     </Routes>
     {loginStatus.Status == true ? <Footer/> :""}
     </BrowserRouter>
